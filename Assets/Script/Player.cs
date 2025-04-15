@@ -5,12 +5,17 @@ public class Player : MonoBehaviour
     private Vector2 _movement;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
+    private BoxCollider2D _bodyCollider;
+    private BoxCollider2D _footCollider;
     public float speed = 5;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _bodyCollider = transform.Find("Body").GetComponent<BoxCollider2D>();
+        _footCollider = transform.Find("Foot").GetComponent<BoxCollider2D>();
     }
 
     void Start()
