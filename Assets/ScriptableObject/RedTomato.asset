@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb5fe954eff0574fbc7fe28b50f30ef, type: 3}
   m_Name: RedTomato
   m_EditorClassIdentifier: 
-  color: {r: 0.9811321, g: 0.032395888, b: 0.041504815, a: 0}
+  image: {fileID: -3962807554240710951, guid: e03b0e94321ef88488fc9816bb3958c8, type: 3}
   score: 1
   speed: 3
+  life: -1
+  launchForce: 10
