@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Limits
   - Spawner
-  - Tomatos
+  - Tomatoes
   - Floor
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1594100211
+    locked: 0
+  - name: Tomatoes
+    uniqueID: 2594977141
+    locked: 0
+  - name: Spawner
+    uniqueID: 3314996725
     locked: 0
   m_RenderingLayers:
   - Default

@@ -4,8 +4,9 @@ using UnityEngine;
 public class TomatoData : ScriptableObject
 {
     public Sprite image;
-    public int score;
-    public float speed;
     public int life;
     public float launchForce;
+    public float probability;
+    public AudioClip smashSfx;
+    public SplashData splashData;
 }

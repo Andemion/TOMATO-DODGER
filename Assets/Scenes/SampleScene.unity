@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000ab7680b2
+  m_ApplyToSortingLayers: 00000000ab7680b2f309045f7535ac9af5d596c5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1755,7 +1755,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.47058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4699,12 +4699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83517d8dc2c45514a8bf438b5ab8f38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 1226388690}
   floorCollider: {fileID: 643566687}
   container: {fileID: 1681102296}
   prefab: {fileID: 7333247830042186605, guid: 186b2f10e19bf9947a0ca0c97086f697, type: 3}
   spawnDelay: 5
-  spawnHeight: 20
   tomatoDataList:
   - {fileID: 11400000, guid: 28742d273e7f3694e853c64d163dabe2, type: 2}
   - {fileID: 11400000, guid: cae7bc73b9f40404fa0455b237739809, type: 2}
@@ -5176,7 +5174,7 @@ SceneRoots:
   - {fileID: 963264635}
   - {fileID: 735504108}
   - {fileID: 935214443}
+  - {fileID: 643566689}
   - {fileID: 1681102296}
   - {fileID: 950639940}
   - {fileID: 1484133007}
-  - {fileID: 643566689}

@@ -56,11 +56,6 @@ public class Tomato : MonoBehaviour
             hit.gameObject.GetComponent<Player>().LoseLife(1);
             Destroy(gameObject);
         }
-        // else if (hit.gameObject.CompareTag("Player"))
-        // {
-        //     OnCollected?.Invoke(this);
-        //     Destroy(gameObject);
-        // } 
     }
     
     public TomatoData Data

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb5fe954eff0574fbc7fe28b50f30ef, type: 3}
-  m_Name: RedTomato
+  m_Name: Orange
   m_EditorClassIdentifier: 
-  image: {fileID: -3962807554240710951, guid: e03b0e94321ef88488fc9816bb3958c8, type: 3}
-  score: 1
+  image: {fileID: 6179068575898267970, guid: ed5f276f533a80841bbb841b5cb582a9, type: 3}
+  score: 0
   speed: 3
   life: -1
   launchForce: 10

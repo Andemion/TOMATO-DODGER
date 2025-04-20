@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb5fe954eff0574fbc7fe28b50f30ef, type: 3}
-  m_Name: BlueTomato
+  m_Name: Red
   m_EditorClassIdentifier: 
-  image: {fileID: 280318858484127897, guid: 508b0a3157d0c4f4ebf835f452217fae, type: 3}
-  score: 0
+  image: {fileID: -3962807554240710951, guid: e03b0e94321ef88488fc9816bb3958c8, type: 3}
+  score: 1
   speed: 3
   life: -1
   launchForce: 10

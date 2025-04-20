@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445c0c2401b5454080fef784515146fb, type: 3}
+  m_Name: Pink
+  m_EditorClassIdentifier: 
+  smashPrefab: {fileID: 7688364969382033904, guid: a75eff02aaacf3b43a57745ac284ed07, type: 3}
+  image: {fileID: -7784781812300605449, guid: 6445202a3f0ede14a9f2fcc2653df2dd, type: 3}
+  score: 1
+  life: 0
+  timeEffect: 0
+  smashSfx: {fileID: 0}

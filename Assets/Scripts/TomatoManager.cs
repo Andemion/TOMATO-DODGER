@@ -7,12 +7,10 @@ using Random = UnityEngine.Random;
 public class TomatoManager : MonoBehaviour
 {
     [Header("Spawn Setup")]
-    [SerializeField] private Transform spawner;
     [SerializeField] private Collider2D floorCollider;
     [SerializeField] private Transform container;
     [SerializeField] private Tomato prefab;
     [SerializeField] private float spawnDelay = 5f;
-    [SerializeField] private float spawnHeight = 2f;
 
     [Header("Data")]
     [SerializeField] private List<TomatoData> tomatoDataList;
@@ -63,7 +61,7 @@ public class TomatoManager : MonoBehaviour
         // 2) Position de spawn : un X au hasard dans les bounds de ta Floor, et Y au‑dessus
         Bounds b = floorCollider.bounds;
         float x = Random.Range(b.min.x, b.max.x);
-        float y = b.max.y + spawnHeight;
+        float y = b.max.y + Random.Range(21.5f, 25f);
         Vector2 spawnPos = new Vector2(x, y);
 
         // 3) Instanciation
