@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   image: {fileID: 6179068575898267970, guid: ed5f276f533a80841bbb841b5cb582a9, type: 3}
-  score: 0
-  speed: 3
-  life: -1
-  launchForce: 10
+  lifeDelta: -1
+  probability: 15
+  smashSfx: {fileID: 0}
+  splashData: {fileID: 11400000, guid: 5feeff07f6d03e549864a0a7b7454117, type: 2}
+  teleportsPlayer: 0

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445c0c2401b5454080fef784515146fb, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  smashPrefab: {fileID: 7688364969382033904, guid: a75eff02aaacf3b43a57745ac284ed07, type: 3}
   image: {fileID: -7784781812300605449, guid: 6445202a3f0ede14a9f2fcc2653df2dd, type: 3}
   score: 1
-  life: 0
-  timeEffect: 0
+  lifeDelta: 0
   smashSfx: {fileID: 0}
+  freezeDuration: 2
+  slideSpeed: 0
+  slideDuration: 0
+  teleportsPlayer: 0

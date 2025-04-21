@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
     public TomatoManager TomatoManager {get; private set;}
     public ScoreManager ScoreManager {get; private set;}
     public UIManager UIManager {get; private set;}
+    public RulesNavigation RulesNavigation {get; private set;}
     //public AudioManager AudioManager {get; private set;}
+    
+    [SerializeField] private Player player;
 
     private void Awake()
     {
@@ -16,11 +19,17 @@ public class GameManager : MonoBehaviour
 
         TomatoManager = GetComponent<TomatoManager>();
         ScoreManager = GetComponent<ScoreManager>();
-        UIManager = GetComponent<UIManager>();
+        UIManager = FindFirstObjectByType<UIManager>();
+        RulesNavigation = GetComponent<RulesNavigation>();
         //AudioManager = GetComponent<AudioManager>();
+        
+        if (player != null)
+            player.OnDeath += HandlePlayerDeath;
     }
+    
 
-    private void TimeUpHandler(){
+    private void HandlePlayerDeath()
+    {
         StopGame();
     }
 
@@ -29,12 +38,14 @@ public class GameManager : MonoBehaviour
         UIManager.StartGame();
         TomatoManager.StartSpawning();
         ScoreManager.Reset();
+        UIManager.HideGameOver();
+        player.ResetLife();
         //AudioManager.StartGame();
     }
 
     public void StopGame()
     {
         TomatoManager.StopSpawning();
-        UIManager.StopGame();
+        UIManager.ShowGameOver();
     }
 }

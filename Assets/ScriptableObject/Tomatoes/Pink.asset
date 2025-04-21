@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Pink
   m_EditorClassIdentifier: 
   image: {fileID: -1257369545512785772, guid: 736002291d717b94bbd1fe73f679f227, type: 3}
-  score: 0
-  speed: 3
-  life: -1
-  launchForce: 10
+  lifeDelta: -1
+  probability: 20
+  smashSfx: {fileID: 0}
+  splashData: {fileID: 11400000, guid: 0aee40ab6a32c6d4dbc751aee05ac597, type: 2}
+  teleportsPlayer: 0

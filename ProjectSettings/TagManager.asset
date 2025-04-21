@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Splash
+  - RulesPanel_1
+  - RulesPanel_2
+  - RulesPanel_3
+  - RulesPanel_4
+  - RulesPanel_5
+  - RulesPanel_6
   layers:
   - Default
   - TransparentFX
@@ -42,11 +49,11 @@ TagManager:
   - name: Background
     uniqueID: 2994763435
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Floor
     uniqueID: 1594100211
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Tomatoes
     uniqueID: 2594977141

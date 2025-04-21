@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Tomato : MonoBehaviour
 {
-    public event Action<Tomato> OnCollected;
+    public event Action<Tomato, Vector2> OnSplashed; 
     private TomatoData _data;
     private SpriteRenderer _spriteRenderer;
-    Rigidbody2D   rb;
+    Rigidbody2D rb;
     public CircleCollider2D col;
     Vector3 startScale;
     public float flightDuration = 5f;      // approximatif
     float elapsed = 0f;
-    Player          player;
+    Player player;
     public float minScale = 0.2f;
 
     private void Awake()
@@ -28,11 +28,6 @@ public class Tomato : MonoBehaviour
 
     void Update()
     {
-        // Si on n’a pas encore activé le collider
-        if (!col.enabled && transform.position.y <= player.transform.position.y)
-        {
-            
-        }
         elapsed += Time.deltaTime;
         float t = Mathf.Clamp01(elapsed / flightDuration);
         float shrinkFactor = Mathf.Lerp(1f, minScale, t);  // passe de 100% à 20%
@@ -48,13 +43,21 @@ public class Tomato : MonoBehaviour
         if (!col.enabled) return;   
         if (hit.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            // effet “écrasé” → destroy + particules…
-            Destroy(gameObject);
+            // récupère le point de contact
+            ContactPoint2D contact = hit.GetContact(0);
+            OnSplashed?.Invoke(this, contact.point);
         }
         if (hit.gameObject.CompareTag("Player"))
         {
-            hit.gameObject.GetComponent<Player>().LoseLife(1);
-            Destroy(gameObject);
+            if (_data.teleportsPlayer)
+            {
+                player.TeleportOnFloorRandom();
+            }
+            else
+            {
+                hit.gameObject.GetComponent<Player>().ChangeLife(Data.lifeDelta);
+                Destroy(gameObject);
+            }
         }
     }
     

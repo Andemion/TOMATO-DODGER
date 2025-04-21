@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445c0c2401b5454080fef784515146fb, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  smashPrefab: {fileID: 7688364969382033904, guid: a75eff02aaacf3b43a57745ac284ed07, type: 3}
   image: {fileID: 1681420316245604000, guid: ab3973ee75c2ce54d8044680b8d18446, type: 3}
   score: 1
-  life: 0
-  timeEffect: 0
+  lifeDelta: 0
   smashSfx: {fileID: 0}
+  freezeDuration: 0
+  slideSpeed: 0
+  slideDuration: 0
+  teleportsPlayer: 0

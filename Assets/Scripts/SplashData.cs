@@ -4,10 +4,13 @@ using UnityEngine;
 public class SplashData : ScriptableObject
 {
     [Tooltip("Prefab à instancier quand la tomate s'écrase")]
-    public GameObject smashPrefab;
     public Sprite image;
     public int score;
-    public int life;
-    public float timeEffect;
+    public int lifeDelta;
     public AudioClip smashSfx;
+    public float freezeDuration = 0f;
+    public float slideSpeed = 0f;
+    public float slideDuration = 0f;
+    public bool teleportsPlayer = false;
+    
 }

@@ -14,9 +14,6 @@ public class LifeUI : MonoBehaviour
         RefreshHearts();
     }
 
-    /// <summary>
-    /// Supprime les anciens cœurs et recrée autant d'images de cœur que de vies.
-    /// </summary>
     public void RefreshHearts()
     {
         // 1) Détruire les cœurs existants
@@ -31,10 +28,7 @@ public class LifeUI : MonoBehaviour
             Instantiate(heartPrefab, transform);
         }
     }
-
-    /// <summary>
-    /// Exemple : appeler cette méthode quand le joueur prend ou gagne une vie.
-    /// </summary>
+    
     public void SetLives(int lives)
     {
         currentLives = lives;

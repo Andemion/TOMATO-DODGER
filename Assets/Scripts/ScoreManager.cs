@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         _gm = GameManager.Instance;
-        _gm.TomatoManager.OnCollected += TomatoCollectedHandler;
+        _gm.TomatoManager.OnCollected += SplashCollectedHandler;
     }
 
     private void Start()
@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
         BestScore = PlayerPrefs.GetInt("best_score", 0);
     }
 
-    private void TomatoCollectedHandler(Tomato tomato)
+    private void SplashCollectedHandler(Splash splash)
     {
         Score++;
         if(Score > BestScore)
