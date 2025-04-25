@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 280318858484127897, guid: 508b0a3157d0c4f4ebf835f452217fae, type: 3}
   lifeDelta: -1
-  probability: 20
+  probability: 25
   smashSfx: {fileID: 0}
   splashData: {fileID: 11400000, guid: e22b5b45b2a92fc429d1fc1dba32776c, type: 2}
   teleportsPlayer: 0

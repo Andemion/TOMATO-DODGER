@@ -2747,7 +2747,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.57
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2772,7 +2772,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5255,7 +5255,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.61, y: 10.47}
+  m_Size: {x: 8.48, y: 10.6}
   m_Direction: 0
 --- !u!1 &935456656
 GameObject:
@@ -9691,8 +9691,6 @@ MonoBehaviour:
   container: {fileID: 1681102296}
   tomatoPrefab: {fileID: 7333247830042186605, guid: 186b2f10e19bf9947a0ca0c97086f697, type: 3}
   splashPrefab: {fileID: -6799762700063769264, guid: a75eff02aaacf3b43a57745ac284ed07, type: 3}
-  spawnDelay: 5
-  launchForce: 10
   tomatoDataList:
   - {fileID: 11400000, guid: 28742d273e7f3694e853c64d163dabe2, type: 2}
   - {fileID: 11400000, guid: cae7bc73b9f40404fa0455b237739809, type: 2}

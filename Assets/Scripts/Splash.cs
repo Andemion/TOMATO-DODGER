@@ -25,10 +25,10 @@ public class Splash : MonoBehaviour
             if (_spriteRenderer != null && _data != null)
                 _spriteRenderer.sprite = _data.image;
             
-            if (_data != null && _data.lifeDelta > 0)
+            if (_data != null && _data.lifeDelta < 0)
             {
-                // auto‑destruction au bout de 10 s
-                Destroy(gameObject, 10f);
+                // auto‑destruction du splash orange au bout de 5 s
+                Destroy(gameObject, 5f);
             }
         }
     }
