@@ -7,8 +7,10 @@ public class AudioManager : MonoBehaviour
 
     public void StartGame()
     {
-        audioSource.clip = mainTheme;
-        audioSource.Play();
+        if(mainTheme != null){
+            audioSource.clip = mainTheme;
+            audioSource.Play();
+        }
     }
 
     public void StopGame()

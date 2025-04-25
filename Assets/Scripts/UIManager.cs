@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI score;
     public TMPro.TextMeshProUGUI bestscore;
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject rulesPanels;
     [SerializeField] private GameObject startPanel;
-    [SerializeField] private GameObject startButton;
+    [SerializeField] private Button startButton;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject firstRulePanel;
-    [SerializeField] private UnityEngine.UI.Button retryButton;
-    [SerializeField] private UnityEngine.UI.Button quitButton;
-    [SerializeField] private UnityEngine.UI.Button rulesButton;
+    [SerializeField] private Button retryButton;
+    [SerializeField] private Button quitButton;
+    [SerializeField] private Button rulesButton;
+    private RulesNavigation RulesNavigation;
 
     private GameManager _gm;
 
@@ -18,16 +22,20 @@ public class UIManager : MonoBehaviour
     {
         _gm = GameManager.Instance;
         gameOverPanel.SetActive(false);
+        gameUI.SetActive(false);
+        rulesPanels.SetActive(false);
         retryButton.onClick.AddListener(OnRetryClicked);
         quitButton.onClick.AddListener(OnQuitClicked);
+        RulesNavigation = GetComponent<RulesNavigation>();
     }
     
     private void Start()
     {
         // Désactivez la première page de règles au début
-        startPanel.SetActive(false);
+        startPanel.SetActive(true);
 
-        // Ajouter un listener au bouton "Rules"
+        // Ajouter un listener au bouton "Start" et "Rules"
+        startButton.onClick.AddListener(StartGame);
         rulesButton.onClick.AddListener(OpenFirstRulePanel);
     }
 
@@ -39,16 +47,21 @@ public class UIManager : MonoBehaviour
     
     public void OpenFirstRulePanel()
     {
-        firstRulePanel.SetActive(true);
+        startPanel.SetActive(false);
+        rulesPanels.SetActive(true);
+        RulesNavigation.OpenRulePanel();
     }
 
     public void StartGame()
     {
         startPanel.SetActive(false);
+        gameUI.SetActive(true);
+        GameManager.Instance.StartGame();
     }
 
     public void ShowGameOver()
     {
+        gameUI.SetActive(false);
         gameOverPanel.SetActive(true);
     }
     
@@ -65,7 +78,6 @@ public class UIManager : MonoBehaviour
     private void OnRetryClicked()
     {
         HideGameOver();
-        // Relance la partie : on peut passer par GameManager
         GameManager.Instance.StartGame();
     }
 

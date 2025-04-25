@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public ScoreManager ScoreManager {get; private set;}
     public UIManager UIManager {get; private set;}
     public RulesNavigation RulesNavigation {get; private set;}
-    //public AudioManager AudioManager {get; private set;}
+    public AudioManager AudioManager {get; private set;}
     
     [SerializeField] private Player player;
 
@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
         TomatoManager = GetComponent<TomatoManager>();
         ScoreManager = GetComponent<ScoreManager>();
         UIManager = FindFirstObjectByType<UIManager>();
-        RulesNavigation = GetComponent<RulesNavigation>();
         //AudioManager = GetComponent<AudioManager>();
         
         if (player != null)
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        UIManager.StartGame();
         TomatoManager.StartSpawning();
         ScoreManager.Reset();
         UIManager.HideGameOver();

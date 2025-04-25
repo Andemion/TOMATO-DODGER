@@ -11,7 +11,7 @@ public class TomatoManager : MonoBehaviour
     [SerializeField] private Transform container;
     [SerializeField] private Tomato tomatoPrefab;
     [SerializeField] private Splash splashPrefab;
-    [SerializeField] private float spawnDelay = 5f;
+    [SerializeField] private float spawnDelay = 3f;
     [SerializeField] private float launchForce = 10f;
     
     [Header("Data")]
@@ -24,10 +24,17 @@ public class TomatoManager : MonoBehaviour
     [Tooltip("Angle max d'erreur en degrés")]
     [Range(0f, 90f)]
     public float aimErrorAngle = 15f;
-    
+    private ScoreManager ScoreManager { get; set; }
+    private float spawnMinus;
+    private float minimumSpawnDelay = 0.2f;
     private readonly List<Tomato> _tomatoes = new List<Tomato>();
     private Coroutine _spawnRoutine;
     public event Action<Splash> OnCollected;
+
+    public void Awake()
+    {
+        ScoreManager = GetComponent<ScoreManager>();
+    }
     
 
     public void StartSpawning()
@@ -50,8 +57,15 @@ public class TomatoManager : MonoBehaviour
     {
         while (true)
         {
+            // Calcule le temps de spawn basé sur le score
+            spawnMinus = ScoreManager.Score / 100.0f;  // Assurez-vous que la division est correcte
+            float adjustedSpawnDelay = spawnDelay - spawnMinus;
+
+            // Appliquez une valeur minimale pour éviter des délais trop courts
+            adjustedSpawnDelay = Mathf.Max(adjustedSpawnDelay, minimumSpawnDelay);
+
             Spawn();
-            yield return new WaitForSeconds(spawnDelay);
+            yield return new WaitForSeconds(spawnDelay - spawnMinus);
         }
     }
     
