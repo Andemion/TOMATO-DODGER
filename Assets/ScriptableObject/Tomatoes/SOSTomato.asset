@@ -15,6 +15,6 @@ MonoBehaviour:
   image: {fileID: 6049693210365693823, guid: 7564aa879e8d44f4fb54b092763b80ef, type: 3}
   lifeDelta: 1
   probability: 20
-  smashSfx: {fileID: 0}
+  smashSfx: {fileID: 8300000, guid: c93a0cee074703741834e59ceae45bf2, type: 3}
   splashData: {fileID: 11400000, guid: add86802676c8d049b6ef6f746f73564, type: 2}
   teleportsPlayer: 0

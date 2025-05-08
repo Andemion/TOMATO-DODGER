@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
         TomatoManager = GetComponent<TomatoManager>();
         ScoreManager = GetComponent<ScoreManager>();
         UIManager = FindFirstObjectByType<UIManager>();
-        //AudioManager = GetComponent<AudioManager>();
+        AudioManager = GetComponent<AudioManager>();
         
         if (player != null)
             player.OnDeath += HandlePlayerDeath;
+        AudioManager.StartMainTheme(); 
     }
     
 
@@ -38,7 +39,6 @@ public class GameManager : MonoBehaviour
         ScoreManager.Reset();
         UIManager.HideGameOver();
         player.ResetLife();
-        //AudioManager.StartGame();
     }
 
     public void StopGame()

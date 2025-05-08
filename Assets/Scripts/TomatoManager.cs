@@ -84,6 +84,20 @@ public class TomatoManager : MonoBehaviour
         var tomato = Instantiate(tomatoPrefab, spawnPos, Quaternion.identity, container);
         tomato.Data = data;
 
+        // 4) Jouer l'effet sonore "smashSfx" avec l'AudioSource de l'AudioManager
+        if (tomato.Data.smashSfx != null)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.audioSource.PlayOneShot(tomato.Data.smashSfx, 0.25f);
+            }
+            else
+            {
+                // Si l'AudioSource de l'AudioManager est null, utiliser PlayClipAtPoint
+                AudioSource.PlayClipAtPoint(tomato.Data.smashSfx, spawnPos);
+            }
+        }
+        
         // 4) Calcul de la direction “vers le Player” + erreur
         Vector2 toPlayer   = ((Vector2)playerTransform.position - spawnPos).normalized;
         float   errorAngle = Random.Range(-aimErrorAngle, aimErrorAngle);
